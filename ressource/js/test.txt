@@ -1,0 +1,20 @@
+function isLive($channel_name) {
+  // media/status API contains the live status and viewer count
+  $url = 'https://www.hitbox.tv/api/media/status/'.$channel_name;
+  // Wait up to 10 seconds for a response
+  $ctx = stream_context_create(array(
+    'http' => array(
+      'timeout' => 10
+      )
+    )
+  );
+  // Do the actual call
+  $response = file_get_contents($url, 0, $ctx);
+  // Decode our response to proccess
+  $data = json_decode($response);
+  // Check if we got the expected result and if so, return it as a boolean
+  if(isset($data->media_is_live))
+    return ((bool)$data->media_is_live) ? 'true' : 'false';
+  else
+    return false;
+}
