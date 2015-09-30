@@ -9,8 +9,26 @@
     <title>AddLive</title>
   </head>
   <body>
-    <?= $content ?>
 
-    
+
+	 <div class="row">
+
+		 <div class="col s3">
+			 <nav>
+				 <ul>
+				 			<a href="#">test</a>
+				 </ul>
+				 <ul>
+							<a href="#">test</a>
+				 </ul>
+			 </nav>
+		 </div>
+
+		 <div class="col s9">
+			    <?= $content ?>
+		 </div>
+
+	 </div>
+
   </body>
 </html>
