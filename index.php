@@ -11,3 +11,4 @@ if($p === 'home') {
 }
 $content = ob_get_clean();
 require 'ressource/tamere/template/default/template.php';
+echo '<h1>'.$p.'</h1>';
